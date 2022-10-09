@@ -243,8 +243,8 @@ elCategories.addEventListener("click", function(evt) {
         
     }else if (targetedDropdown) {
         if (dropdownSorting(targetedDropdown, "High")) {
-            // elList.innerHTML = "";
-            // renderContent();
+            elList.innerHTML = "";
+            renderContent();
             sortByRating("[data-index]");
             
         }
