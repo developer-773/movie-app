@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Movie website with more movies. Jurabekov's  website">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>KinoBUM - Watch online movies</title>
+    <link rel="icon" href="./images/logo.png">
+</head>
+<body class="body">
+    <header class="py-5">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./images/logo.png" width="70" height="70" alt="Kinobum's logo">
+                </a>
+                <h1 class="header__title mb-0 mx-auto">Visit more... Watch more...</h1>
+                <div class="collapse navbar-collapse show mt-5 mt-md-4" id="navbarSupportedContent">
+                    <form id="form" class="d-flex header__form ms-md-auto" role="search" autocomplete="off">
+                        <input id="myInput" class="form-control input border-end-0"  type="search" placeholder="Search" aria-label="Search">
+                        <button class=" movie__btn" type="click">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="site-main">
+        <section class="categories pt-4">
+            <div class="container mx-auto">
+                <div class="alert alert-warning alert-dismissible status" role="alert">
+                    <p class="mb-0">
+                        Your internet connection speed is <strong>slow</strong> or <strong>disconnected.</strong> Please refresh your page.
+                    </p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <a class="top position-fixed d-none" href="#top">
+                    <img src="./images/arrow.png" width="100" height="50" alt="">
+                </a>
+                <div class="d-flex flex-column flex-xl-row justify-content-lg-between categories"> 
+                    <h2 class="header__title fs-4 mb-3">All movies</h2>
+                    <div class="btnParent mb-4">
+                        <button class="tags mb-2">Action</button>
+                        <button class="tags mb-2">Documentary</button>
+                        <button class="tags mb-2">Family</button>
+                        <button class="tags mb-2">Music</button>
+                        <button class="tags mb-2">Sport</button>
+                        <button class="tags mb-2">Horror</button>
+                        <button class="tags mb-2">Drama</button>
+                        <button class="tags mb-2">Fantasy</button>
+                        <button class="tags mb-2">Thriller</button>
+                        <button class="tags mb-2">Adventure</button>
+                        <button class="tags mb-2">Comedy</button>
+                        <button class="tags mb-2">Romance</button>
+                        <button class="tags mb-2">Animation</button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort by
+                        </button>
+                        <ul class="dropdown-menu bg-secondary ">
+                            <li><a class="dropdown-item" href="#">High rating</a></li>
+                            <li><a class="dropdown-item" href="#">Low rating</a></li>
+                            <li><a class="dropdown-item" href="#">Newest to oldest</a></li>
+                            <li><a class="dropdown-item" href="#">Year</a></li>
+                            <li><a class="dropdown-item" href="#">Oldest to newest</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="movie__section pt-5">
+            <div class="container ">             
+                <ul id="myUL" class="row list list-unstyled d-flex justify-content-center justify-content-md-between mb-0 mx-auto ">
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-dark py-3">
+    <div class="container mx-auto">
+        <div class="footer__box">
+            <p class="text-center text-white mb-0">© 2022 developer_773. All rights reserved.
+        </div>
+    </div>
+</footer>
+<template class="movie__template">   
+    <li id="item" class="col-sm-12 col-md-6 col-lg-4 col-xl-3 movie__item mb-5 me-3 position-relative shadow-lg rounded p-0" >
+        <div class="card skeleton-cards placeholder-glow " aria-hidden="true">
+            <img src="" class="card-img-top placeholder" alt="">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a href="#" tabindex="-1" class="btn btn-secondary placeholder col-6 disabled"></a>
+            </div>
+        </div>
+        <img class="movie__cover " src = "" alt="">  <!--cover-->
+        <div class="movie__txt-box position-absolute bottom-0 w-100 p-3 ">
+            <h3 class="movie__title fw-normal text-white h4 "></h3>
+            <div class="movie__txt-center d-flex justify-content-between mb-3 ">
+                <span class="movie__rating text-secondary d-inline-flex"></span>
+                <span>
+                    <time class="movie__time text-secondary d-inline-flex " datetime=""></time>
+                </span>
+                <span class="movie__duration text-secondary d-inline-flex"></span>
+            </div>
+            <p class="movie__genre text-secondary "></p>
+            <div class="">
+                <button class="movie__info movie__btn d-inline-flex justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">More info</button>
+            </div>
+        </div>
+    </li>
+</template>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="card skeleton-card pt-4 pb-3 px-3 placeholder-glow position-absolute d-block" aria-hidden="true">
+                <div class="w-50 placeholder-glow ">
+                    <h3 class="placeholder col-7 mb-4"></h3>
+                    <img src="" class="card-img-top placeholder" alt="">
+                </div>
+                <div class="card-body mt-4">
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-3"></span>
+                        <span class="placeholder col-3"></span>
+                        <span class="placeholder col-3"></span>
+                        <span class="placeholder col-6 mb-5"></span>
+                        <span class="placeholder col-12"></span>
+                        <span class="placeholder col-12"></span>
+                        <span class="placeholder col-12"></span>
+                        <span class="placeholder col-12"></span>
+                        <span class="placeholder col-12"></span>
+                    </p>
+                    <p class="placeholder col-6 mb-4"></p>
+                    <button class="btn placeholder col-3 d-block ms-auto" type="btn"></button>
+                </div>
+            </div>
+            <div class="modal-header border-bottom-0 ">
+                <h3 class="modal-title fs-5 text-white" id="staticBackdropLabel ">M</h3>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center pt-0 ">
+                <div class="me-2 iframe__box ">
+                    <iframe class="modal-iframe " width="390" height="218"
+                    src="">
+                </iframe>
+            </div>
+            <div class="modal-content-right p-3">  
+                <h3 id="title" class="movie__title fw-normal text-white h4 "></h3>
+            </div>
+            <template class="modal__template">
+                <div class="movie__txt-center d-flex justify-content-between mb-3">
+                    <span class="movie__rating text-secondary d-inline-flex align-items-center"></span>
+                    <span>
+                        <time class="movie__time text-secondary d-inline-flex align-items-center" datetime=""></time>
+                    </span>
+                    <span class="movie__duration text-secondary d-inline-flex align-items-center"></span>
+                </div>
+                <p class="movie__genre text-secondary "></p>
+                <p class="movie__description text-secondary "></p>
+                <a class="movie__link-imdb d-inline-flex align-items-center" href="" target="_blank">Show on IMDB</a>
+            </template>
+        </div>
+        
+        <div class="modal-footer border-top-0 ">
+            <button type="button" class="btn-secondary movie__btn close__btn" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/movies.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
